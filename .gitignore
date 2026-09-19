@@ -1,0 +1,19 @@
+# python / uv
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# 수집 데이터 — 원본 JSON(수 GB)과 가공 테이블은 저장소에 넣지 않는다.
+# 재생성은 `uv run mlbcorpus crawl` 로.
+data/
+
+# editors / os
+.DS_Store
+.idea/
+.vscode/
