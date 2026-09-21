@@ -8,6 +8,7 @@ MLB Stats API로 구축하는 야구 텍스트 코퍼스. 홍익대 불문과 �
 - `docs/01-statsapi-findings.md` — API 실측: 엔드포인트, 응답 구조, 시즌별 커버리지, 접근 제약
 - `docs/02-schema.md` — 원본 캐시 레이아웃과 정규화 테이블 스키마, 장(章)별 의존 컬럼
 - `docs/dissect/` — 경기 하나를 세 register 로 정렬한 분석 보고서 (`mlbcorpus dissect` 출력)
+- `notebooks/mlb_playground.ipynb` — 팀원용 Colab 노트북. 설치 없이 경기 하나를 API에서 바로 받아 표·기사·그래프로 본다 (저장소 코드에 의존하지 않는 독립 실행형)
 
 ## 요구 사항
 
@@ -82,6 +83,17 @@ src/mlbcorpus/
   normalize/     원본 → 테이블 (예정)
 tests/           respx 로 HTTP 를 흉내 낸 단위 테스트
 ```
+
+## Colab 노트북
+
+`notebooks/mlb_playground.ipynb`는 `notebooks/build_playground.py`가 생성한다. 셀 내용을 고칠 때는 노트북이 아니라 이 스크립트를 고치고 다시 생성한다. 네트워크 없이 캐시된 응답으로 전체 셀을 실행해 보는 검사도 있다.
+
+```bash
+uv run --group notebooks python notebooks/build_playground.py          # 노트북 생성
+uv run --group notebooks python notebooks/test_playground_offline.py   # 캐시된 824464 로 오프라인 실행 검사
+```
+
+Colab에 올리는 방법은 `docs/00-team-guide.md` 참고.
 
 ## 저장소 운영
 

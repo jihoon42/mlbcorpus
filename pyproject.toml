@@ -20,6 +20,14 @@ dev = [
     "pytest-asyncio>=0.24",
     "respx>=0.21",
 ]
+# Colab 노트북 생성·오프라인 실행 검사용:  uv run --group notebooks python notebooks/build_playground.py
+notebooks = [
+    "nbformat>=5.10",
+    "nbclient>=0.10",
+    "ipykernel>=6.29",
+    "matplotlib>=3.9",
+    "requests>=2.32",
+]
 
 [build-system]
 requires = ["hatchling"]

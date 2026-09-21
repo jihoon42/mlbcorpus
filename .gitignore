@@ -13,6 +13,9 @@ build/
 # 재생성은 `uv run mlbcorpus crawl` 로.
 data/
 
+# 노트북 검사 중 생기는 그림
+notebooks/_*.png
+
 # editors / os
 .DS_Store
 .idea/
