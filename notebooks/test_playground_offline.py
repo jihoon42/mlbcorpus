@@ -17,6 +17,7 @@ from nbclient import NotebookClient
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 
 FAKE = r'''
+import os; os.environ.setdefault("NLTK_ALLOW_PROXIED_URLOPEN", "1")  # 이 검사 환경의 프록시용, Colab 에서는 불필요
 import gzip, json, re, pathlib
 import requests as _requests
 _ROOT = pathlib.Path(%r)
@@ -62,7 +63,8 @@ def main() -> int:
     if "--variant" in sys.argv:  # 분기 검사: 단어 바꾸기, 타석 번호 범위 밖
         for c in nb.cells:
             if c.cell_type == "code":
-                c.source = c.source.replace('word = "clutch"', 'word = "Tucker"').replace("at_bat = 2 #@param", "at_bat = 99 #@param")
+                c.source = (c.source.replace('word = "clutch"', 'word = "Tucker"').replace("at_bat = 2 #@param", "at_bat = 99 #@param")
+                            .replace('custom = "" #@param', 'custom = "Kyle Tucker homered twice and the Reds never recovered." #@param'))
     nb.cells.insert(0, nbformat.v4.new_code_cell(FAKE % str(ROOT)))
     client = NotebookClient(nb, timeout=120, kernel_name="python3", allow_errors=False)
     client.execute()

@@ -8,7 +8,7 @@ MLB Stats API로 구축하는 야구 텍스트 코퍼스. 홍익대 불문과 �
 - `docs/01-statsapi-findings.md` — API 실측: 엔드포인트, 응답 구조, 시즌별 커버리지, 접근 제약
 - `docs/02-schema.md` — 원본 캐시 레이아웃과 정규화 테이블 스키마, 장(章)별 의존 컬럼
 - `docs/dissect/` — 경기 하나를 세 register 로 정렬한 분석 보고서 (`mlbcorpus dissect` 출력)
-- `notebooks/mlb_playground.ipynb` — 팀원용 Colab 노트북. 설치 없이 경기 하나를 API에서 바로 받아 표·기사·그래프로 본다 (저장소 코드에 의존하지 않는 독립 실행형)
+- `notebooks/mlb_playground.ipynb` — 팀원용 Colab 노트북. 설치 없이 경기 하나를 API에서 바로 받아 표·기사·그래프로 보고(1~6), 그 기사로 문장 분리·품사 태깅·표제어 추출·한국어 형태소 분석을 해 본다(7~9). 저장소 코드에 의존하지 않는 독립 실행형
 
 ## 요구 사항
 
