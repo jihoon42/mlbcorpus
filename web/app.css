@@ -1,0 +1,304 @@
+/* Play-by-Word. 읽을 문장은 세리프, 조작과 한국어는 산세리프.
+   색은 두 가지 일에만 쓴다. 고른 언어(영어 파랑, 스페인어 빨강)와 공부 상태(아는 말 초록, 공부할 말 호박색).
+   글자 위의 표시는 색에 기대지 않는다: 아직 안 본 말은 옅은 점선, 공부할 말은 굵은 밑줄, 아는 말은 표시 없음. */
+:root{
+  color-scheme:light;
+  --paper:#f4f6f1; --sheet:#fff; --ink:#16231c; --ink2:#47574e; --muted:#7c8a82; --rule:#d9e0da; --wash:#e9f0ea;
+  --en:#1f4fd1; --es:#b3263d; --acc:var(--en); --ok:#1f7a4d; --study:#c98a00; --study-ink:#8a5d00; --mark:#ffe98a;
+  --serif:"Iowan Old Style","Charter","Palatino Linotype","Book Antiqua",Georgia,serif;
+  --sans:"Pretendard","Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",system-ui,sans-serif;
+}
+body[data-lang=es]{--acc:var(--es)}
+*{box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px 80px}
+.note{color:var(--ink2);font-size:.93rem;margin:10px 0}
+.empty{color:var(--ink2);font-size:.9rem}
+.err{background:#fff3f1;border-left:3px solid var(--es);padding:10px 14px;margin:12px 0;font-size:.93rem}
+.btn{border:1px solid var(--ink);background:var(--ink);color:#fff;padding:8px 16px;border-radius:4px;font-size:.92rem;font-weight:600}
+.btn:hover{background:#27382f}
+.btn.ghost{background:var(--sheet);color:var(--ink);font-weight:500}
+.btn.ghost:hover{background:var(--wash)}
+.btn.sm{padding:4px 11px;font-size:.82rem}
+.row2{display:flex;flex-wrap:wrap;gap:8px}
+
+/* 머리: 이름, 언어 고르기 */
+.top{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;padding:20px 0 14px;border-bottom:2px solid var(--ink)}
+.top h1{font-family:var(--serif);font-size:1.6rem;letter-spacing:-.01em;margin:0;line-height:1}
+.top .tag{color:var(--ink2);font-size:.9rem;margin:0}
+.langs{margin-left:auto;display:flex;align-items:center;gap:14px}
+.seg{display:inline-flex;border:1px solid var(--ink);border-radius:4px;overflow:hidden}
+.seg button{border:0;background:var(--sheet);padding:6px 15px;font-size:.92rem}
+.seg button+button{border-left:1px solid var(--ink)}
+.seg button[aria-pressed=true]{background:var(--acc);color:#fff;font-weight:600}
+.sw{display:flex;align-items:center;gap:6px;font-size:.86rem;color:var(--ink2);cursor:pointer}
+.sw input{accent-color:var(--ink);width:15px;height:15px;margin:0}
+
+/* 경기 고르기 */
+.pick{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;padding:14px 0 2px}
+.pick label{font-size:.88rem;color:var(--ink2)}
+.pick input[type=date]{border:1px solid var(--rule);background:var(--sheet);padding:5px 8px;border-radius:4px}
+.games{display:flex;flex-wrap:wrap;gap:6px}
+.game{border:1px solid var(--rule);background:var(--sheet);padding:5px 10px;border-radius:4px;font-size:.88rem;font-variant-numeric:tabular-nums}
+.game:hover{border-color:var(--ink)}
+.game[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.game small{opacity:.7;margin-left:6px}
+
+/* 경기 머리: 점수판이 곧 읽기 진도다. 읽은 회의 칸이 채워진다 */
+.ghead{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:18px 48px;align-items:start;background:var(--sheet);border:1px solid var(--rule);border-radius:6px;padding:18px 22px 16px;margin:14px 0 0}
+.ghead h2{font-family:var(--serif);font-size:1.3rem;margin:0;line-height:1.25}
+.gd{font-size:.8rem;color:var(--muted);margin:1px 0 10px;font-variant-numeric:tabular-nums}
+.line{border-collapse:separate;border-spacing:3px;margin-left:-3px;font-variant-numeric:tabular-nums;font-size:.88rem}
+.line th{color:var(--muted);font-size:.72rem;font-weight:400;padding:0;width:26px;text-align:center}
+.line td{padding:0;text-align:center}
+.line td.t{width:44px;text-align:left;font-weight:700;font-size:.82rem}
+.line td.r,.line th.r{padding-left:8px;border-left:1px solid var(--rule)}
+.line td.r{font-weight:700}
+.line td.x{color:var(--muted)}
+.line td a{display:block;width:26px;line-height:24px;border:1px solid var(--rule);border-radius:3px;color:var(--ink);text-decoration:none}
+.line td a:hover{border-color:var(--ink)}
+.line td a.rd{background:var(--ink);border-color:var(--ink);color:#fff}
+.lnote{font-size:.74rem;color:var(--muted);margin:8px 0 0}
+.meter h3{font-size:.9rem;margin:2px 0 9px}
+.bar{display:flex;gap:2px;height:12px;background:var(--wash);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%}
+.bar i.k{background:var(--ok)} .bar i.s{background:var(--study)}
+.meter .cnt{display:flex;flex-wrap:wrap;gap:4px 16px;margin:8px 0 0;font-size:.86rem;color:var(--ink2);font-variant-numeric:tabular-nums}
+.cnt .k,.mini .k{color:var(--ok)} .cnt .s,.mini .s{color:var(--study-ink)}
+.cnt b::before,.mini b::before{content:"";display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px;background:currentColor}
+.cnt b.s::before,.mini b.s::before{background:var(--study)}
+.meter .rd{font-size:.86rem;color:var(--ink2);margin:10px 0 0;max-width:62ch}
+.meter .rd b{color:var(--ink)}
+
+/* 단계: 예습, 읽기, 문제, 기사는 차례가 있어서 번호를 붙였다. 맞대결은 곁가지 */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:34px;align-items:start}
+.tabs{display:flex;align-items:stretch;border-bottom:1px solid var(--ink);margin-top:16px;position:sticky;top:0;background:var(--paper);z-index:5}
+.tab{border:0;background:none;padding:12px 15px 9px;font-size:.96rem;border-bottom:3px solid transparent;color:var(--ink2);display:flex;gap:7px;align-items:center;white-space:nowrap}
+.tab i{font-style:normal;display:grid;place-items:center;width:18px;height:18px;border:1px solid var(--muted);border-radius:50%;font-size:.68rem;color:var(--ink2);font-variant-numeric:tabular-nums}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected=true]{border-bottom-color:var(--acc);color:var(--ink);font-weight:700}
+.tab[aria-selected=true] i{background:var(--acc);border-color:var(--acc);color:#fff}
+.tabs .sep{width:1px;background:var(--rule);margin:11px 8px}
+.mini{margin-left:auto;display:flex;align-items:center;gap:14px;font-size:.8rem;color:var(--ink2);white-space:nowrap;font-variant-numeric:tabular-nums}
+.mini b{font-weight:600}
+.lead{color:var(--ink2);font-size:.93rem;max-width:70ch;margin:18px 0 6px}
+.legend{display:flex;flex-wrap:wrap;gap:4px 20px;font-size:.8rem;color:var(--ink2);margin:8px 0 0}
+.legend b{font-family:var(--serif);font-weight:400;font-size:1.05em;color:var(--ink);margin-right:7px}
+.legend b.new{border-bottom:1px dotted var(--muted)} .legend b.study{border-bottom:2px solid var(--study)}
+.legend .dot{display:inline-block;width:11px;height:11px;border-radius:50%;background:var(--ink);margin-right:7px;vertical-align:-1px}
+
+/* 문장과 표현. 뜻은 문장 안이 아니라 문장 아래 줄에 나온다 */
+.sent{font-family:var(--serif);font-size:1.19rem;line-height:1.62;margin:0;overflow-wrap:break-word;word-break:normal}
+.u,.b{cursor:pointer;border-radius:2px 2px 0 0}
+.u{border-bottom:1px dotted var(--muted)}
+.u.known{border-bottom-color:transparent}
+.u.study{border-bottom:2px solid var(--study)}
+.u:hover,.b:hover{background:var(--wash)}
+.u.sel{background:var(--mark)}
+.tgt{background:var(--mark);padding:0 3px;border-radius:2px;color:inherit}
+.blank{display:inline-block;min-width:5.2em;border-bottom:2px solid var(--ink);text-align:center;font-family:var(--sans);font-size:.85em;color:var(--muted)}
+.oth{font-size:1rem;color:var(--ink2);margin-top:5px}
+.oth::before{content:attr(lang);font-family:var(--sans);font-size:.68rem;color:var(--muted);border:1px solid var(--rule);border-radius:3px;padding:0 4px;margin-right:8px;vertical-align:.12em}
+.gls{display:flex;flex-wrap:wrap;gap:2px 18px;margin:6px 0 1px;font-size:.85rem;line-height:1.5;color:var(--ink2)}
+.gls:empty{display:none}
+.ge{border:0;background:none;padding:0;text-align:left;font-size:inherit;color:inherit}
+.ge b{font-family:var(--serif);font-size:1.06em;font-weight:600;color:var(--ink);margin-right:7px;border-bottom:2px solid var(--study)}
+.ge.b{color:var(--muted)} .ge.b b{font-weight:400;color:var(--ink2);border-bottom:0}
+button.ge:hover b{background:var(--mark)}
+
+/* 읽기: 반 이닝 묶음, 타석 한 줄. 점수가 난 타석은 번호를 채운다 */
+.half{scroll-margin-top:58px}
+.half h3{display:flex;align-items:baseline;gap:10px;font-size:1rem;margin:30px 0 0;padding-bottom:7px;border-bottom:1px solid var(--ink)}
+.half h3 .hn{font-family:var(--serif);font-size:1.28rem}
+.half h3 .ht{font-weight:400;color:var(--ink2);font-size:.86rem}
+.half h3 .hr{margin-left:auto;font-weight:400;font-size:.84rem;color:var(--ink2);font-variant-numeric:tabular-nums}
+.pa{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:0 12px;padding:14px 0 12px;border-bottom:1px solid var(--rule);align-items:start}
+.pa .no{display:grid;place-items:center;width:23px;height:23px;border-radius:50%;margin-top:.32em;font-size:.72rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.pa.sc .no{background:var(--ink);color:#fff;font-weight:600}
+.ans{border:1px solid var(--rule);background:var(--sheet);border-radius:99px;padding:2px 11px;font-size:.78rem;color:var(--ink2);margin-top:.38em;white-space:nowrap}
+.ans:hover{border-color:var(--ink);color:var(--ink)}
+.ansv{font-size:.8rem;background:var(--wash);border-radius:99px;padding:3px 11px;margin-top:.34em;white-space:nowrap;font-variant-numeric:tabular-nums}
+.capb{grid-column:2 / -1;margin-top:10px;padding:10px 14px 9px;background:var(--wash);border-radius:4px}
+.capb .capt{display:block;font-size:.74rem;color:var(--ink2);margin-bottom:3px}
+.capb .sent{font-size:1.07rem}
+.hend{padding:14px 0 2px 42px;display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center}
+.done{font-size:.86rem;color:var(--ok);font-weight:600}
+.kept{font-size:.86rem;color:var(--study-ink)}
+.rev{flex-basis:100%;border:1px solid var(--rule);background:var(--sheet);border-radius:6px;padding:12px 16px 6px}
+.rev h4{margin:0 0 8px;font-size:.88rem}
+.rv{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;padding:7px 0;border-top:1px solid var(--rule)}
+.rv .rw{font-family:var(--serif);font-size:1.08rem;min-width:8em}
+.rv .rk{font-size:.92rem;color:var(--ink2);flex:1;min-width:10em}
+.next{margin:34px 0 0;padding:18px 22px;background:var(--sheet);border:1px solid var(--ink);border-radius:6px;max-width:740px}
+.next p{margin:0 0 12px}
+
+/* 예습: 카드 한 장씩. 위의 막대가 몇 장째인지와 결과를 보여 준다 */
+.flash,.sum{background:var(--sheet);border:1px solid var(--ink);border-radius:6px;padding:20px 24px 18px;margin:16px 0;max-width:740px}
+.dots{display:flex;gap:5px;margin-bottom:14px}
+.dots i{width:24px;height:5px;border-radius:3px;background:var(--rule)}
+.dots i.k{background:var(--ok)} .dots i.s{background:var(--study)} .dots i.cur{background:var(--ink)}
+.flash .cnt{font-size:.82rem;color:var(--ink2);margin:0 0 12px}
+.flash .sent{font-size:1.36rem;line-height:1.5}
+.flash .sent.lone{font-size:1.8rem}
+.flash .ask{font-size:.9rem;color:var(--ink2);margin:16px 0 12px}
+.flash .a{font-size:1.2rem;font-weight:700;margin:16px 0 4px}
+.flash .more,.flash .base{font-size:.88rem;color:var(--ink2);margin:0 0 4px}
+.flash .row2{margin-top:14px}
+.keys{font-size:.76rem;color:var(--muted);margin:14px 0 0}
+.sum p{margin:0 0 14px}
+
+/* 문형: 가로가 문장의 틀, 세로가 그 자리에 갈아 끼울 수 있는 말 */
+.ptns{margin-top:36px}
+.ptns h3{font-size:1.02rem;margin:0 0 2px}
+.ptns .note{max-width:70ch;margin-top:4px}
+.ptn{border-top:1px solid var(--rule);padding:13px 0 12px}
+.ptn .pn{font-size:.78rem;color:var(--muted);margin-bottom:7px}
+.ptr{display:flex;flex-wrap:wrap;align-items:flex-start;gap:4px 10px;font-family:var(--serif);font-size:1.13rem;line-height:1.55}
+.ptr .nm{font-family:var(--sans);font-size:.76rem;color:var(--ink2);background:var(--sheet);border:1px solid var(--rule);border-radius:99px;padding:1px 9px;margin-top:.34em}
+.ptr .colx{display:flex;flex-direction:column;border-left:2px solid var(--acc);padding-left:8px}
+.ptr .colx small{font-family:var(--sans);font-size:.68rem;color:var(--muted);margin-left:6px}
+.pex{font-family:var(--serif);font-size:.95rem;color:var(--muted);margin:8px 0 0}
+.pex::before{content:"예";font-family:var(--sans);font-size:.72rem;border:1px solid var(--rule);border-radius:3px;padding:0 4px;margin-right:8px}
+
+/* 문제 */
+.q{border-bottom:1px solid var(--rule);padding:20px 0 22px}
+.q .meta{font-size:.8rem;color:var(--muted);margin-bottom:6px}
+.q .cue{font-size:.95rem;margin:10px 0 0}
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.opt{border:1px solid var(--ink);background:var(--sheet);padding:6px 14px;border-radius:4px;font-family:var(--serif);font-size:1.05rem}
+.opt:hover:not([disabled]){background:var(--wash)}
+.opt.ko{font-family:var(--sans);font-size:.95rem}
+.opt[disabled]{cursor:default;border-color:var(--rule);color:var(--muted)}
+.opt.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.wrong{border-color:var(--es);color:var(--es);text-decoration:line-through}
+.fb{margin-top:12px;font-size:.92rem;color:var(--ink2);border-left:3px solid var(--rule);padding-left:12px;max-width:70ch}
+.fb.ok{border-left-color:var(--ok)} .fb.no{border-left-color:var(--study)}
+.fb b{color:var(--ink)}
+.fb [lang]{font-family:var(--serif);font-size:1.06em;color:var(--ink)}
+/* 순서 맞추기: 아래의 말을 눌러 윗줄에 놓는다. 쓴 말의 자리는 비워 두어 나머지가 움직이지 않게 한다 */
+.built{display:flex;flex-wrap:wrap;gap:6px;align-items:center;min-height:50px;padding:7px 0;margin-top:12px;border-bottom:2px solid var(--ink)}
+.built.ok{border-bottom-color:var(--ok)} .built.no{border-bottom-color:var(--es)}
+.built .ph{font-size:.84rem;color:var(--muted)}
+.pool{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chunk{border:1px solid var(--ink);background:var(--sheet);border-radius:4px;padding:5px 11px;font-family:var(--serif);font-size:1.05rem;color:var(--ink)}
+.chunk:hover:not([disabled]){background:var(--wash)}
+.chunk.used{visibility:hidden}
+.built .chunk[disabled]{cursor:default}
+.built.ok .chunk{border-color:var(--ok)} .built.no .chunk{border-color:var(--es)}
+.lk{border:0;background:none;padding:0;margin-left:4px;font-size:inherit;color:var(--ink2);text-decoration:underline;text-underline-offset:3px}
+.lk:hover{color:var(--ink)}
+
+/* 기사 */
+.recap h2.sent{font-size:1.55rem;line-height:1.3;font-weight:700;margin:18px 0 2px;max-width:30em}
+.recap .by{color:var(--muted);font-size:.84rem;margin:6px 0 4px}
+.recap p.sent{font-size:1.1rem;line-height:1.72;max-width:66ch;margin:1em 0 0}
+.recap hr{border:0;border-top:1px solid var(--ink);margin:30px 0 0}
+
+/* 표현 카드. 고른 말이 없을 때는 공부할 말 목록 */
+aside.card{position:sticky;top:14px;background:var(--sheet);border:1px solid var(--ink);border-radius:6px;padding:18px 18px 16px;margin-top:16px;max-height:calc(100vh - 28px);overflow:auto}
+.card h2{font-family:var(--serif);font-size:1.65rem;margin:0;line-height:1.15;overflow-wrap:anywhere}
+.card h3{font-size:.8rem;color:var(--muted);font-weight:600;margin:16px 0 7px}
+.card h3.nb{font-size:.92rem;color:var(--ink);margin:0 0 10px}
+.card .empty{margin:10px 0 0;font-size:.86rem}
+.tagline{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;margin:7px 0 10px;font-size:.8rem;color:var(--ink2)}
+.pill{border:1px solid var(--rule);padding:0 7px;border-radius:99px}
+.pill.l{border-color:var(--acc);color:var(--acc)}
+.pill.study{border-color:var(--study);color:var(--study-ink)} .pill.known{border-color:var(--ok);color:var(--ok)}
+.card .ko{font-size:1.08rem;font-weight:700;margin:0 0 6px}
+.base,.freq{font-size:.85rem;color:var(--ink2);margin:0 0 6px}
+.barx{display:grid;grid-template-columns:92px 1fr 38px;gap:8px;align-items:center;font-size:.86rem;margin:3px 0}
+.barx i{display:block;height:8px;background:var(--ink);border-radius:0 4px 4px 0}
+.barx b{font-weight:400;color:var(--ink2);text-align:right;font-variant-numeric:tabular-nums}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--rule);background:var(--sheet);padding:2px 9px;border-radius:4px;font-family:var(--serif);font-size:.96rem;white-space:nowrap}
+.chip:hover{border-color:var(--ink)}
+.chip small{font-family:var(--sans);color:var(--muted);font-size:.7rem;margin-left:5px}
+.nu{font-size:.87rem;margin:0}
+.close{float:right;border:1px solid var(--rule);background:none;border-radius:4px;padding:1px 9px;font-size:.8rem;color:var(--ink2);margin:0 0 6px 10px}
+.close:hover{border-color:var(--ink);color:var(--ink)}
+.marks{margin-top:16px;padding-top:13px;border-top:1px solid var(--rule)}
+/* 말의 자리: 세로는 바꿔 쓸 말(계열 관계), 가로는 같이 쓰는 말(통합 관계) */
+.cross{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:9px 8px;align-items:center;justify-items:center;padding:4px 0 2px}
+.cross::before{content:"";position:absolute;left:50%;top:14px;bottom:14px;border-left:1px solid var(--muted)}
+.cross::after{content:"";position:absolute;top:50%;left:0;right:0;border-top:1px solid var(--muted)}
+.cross.flat::before{display:none}
+.cross>*{position:relative;z-index:1}
+.cross .cw{grid-column:2;grid-row:2;font-family:var(--serif);font-size:1.15rem;font-weight:700;background:var(--mark);padding:2px 10px;border-radius:3px;white-space:nowrap}
+.cross.flat .cw,.cross.flat .lf,.cross.flat .rt{grid-row:1}
+.cross .up{grid-column:1 / -1;grid-row:1} .cross .dn{grid-column:1 / -1;grid-row:3}
+.cross .lf{grid-column:1;grid-row:2;justify-self:end} .cross .rt{grid-column:3;grid-row:2;justify-self:start}
+.cross .col{display:flex;flex-direction:column;gap:4px;align-items:center;max-width:100%}
+.cross .rowc{display:flex;flex-wrap:wrap;gap:4px;justify-content:center}
+.cross .chip{font-size:.9rem;padding:1px 7px;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.axl{font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between;gap:12px;margin:8px 0 0}
+
+/* 맞대결 */
+.pl{border:0;border-bottom:1px solid var(--rule);background:none;padding:0;font:inherit;color:inherit}
+.pl:hover{border-bottom-color:var(--ink)}
+.relpick{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;margin:12px 0 24px}
+.relpick label{font-size:.9rem;color:var(--ink2)}
+.relpick input{border:1px solid var(--rule);background:var(--sheet);padding:6px 9px;border-radius:4px;min-width:220px}
+.quick{border:1px solid var(--rule);background:var(--sheet);padding:4px 10px;border-radius:4px;font-size:.88rem}
+.quick:hover{border-color:var(--ink)}
+.ego{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);column-gap:56px;align-items:center;padding:4px 0 18px}
+.wires{position:absolute;left:0;top:0;pointer-events:none;overflow:visible}
+.wires path.wr{fill:none;stroke:var(--muted);stroke-width:1.2}
+.wires path.wr.sel{stroke:var(--ink);stroke-width:2.2}
+.sidehead{font-size:.8rem;color:var(--muted);margin:0 0 12px;line-height:1.45}
+.sidehead b{color:var(--ink2);font-weight:600}
+.col.in .sidehead{text-align:right}
+.side{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.side li{display:flex;flex-wrap:wrap;align-items:flex-start;gap:0 8px;font-family:var(--serif);font-size:1.02rem;line-height:1.3;padding:3px 5px;border-radius:2px}
+.side.in li{justify-content:flex-end}
+.side li.sel{background:var(--wash)}
+.side li small{flex-basis:100%;font-family:var(--sans);font-size:.74rem;color:var(--muted)}
+.side.in li small{text-align:right}
+.me{border:1px solid var(--ink);background:var(--sheet);border-radius:6px;padding:14px 12px;text-align:center;max-width:160px}
+.me strong{display:block;font-family:var(--serif);font-size:1.28rem;line-height:1.2}
+.me small{display:block;color:var(--ink2);font-size:.76rem;margin-top:6px}
+.ego.narrow{grid-template-columns:1fr;row-gap:20px}
+.ego.narrow .wires{display:none}
+.ego.narrow .side.in li{justify-content:flex-start}
+.ego.narrow .side.in li small,.ego.narrow .col.in .sidehead{text-align:left}
+.ego.narrow .me{max-width:none;justify-self:start;order:-1}
+.relsent{border-top:1px solid var(--rule);padding-top:14px}
+.relsent h4{margin:0 0 4px;font-size:1rem}
+.relsent .when{font-size:.84rem;color:var(--ink2);margin:0 0 10px;max-width:70ch}
+.rrow{display:grid;grid-template-columns:74px minmax(0,1fr);gap:0 10px;align-items:baseline;margin-top:9px}
+.rrow .kind{font-size:.76rem;color:var(--muted)}
+
+/* 처음: 언어 고르기 */
+.choose{max-width:580px;margin:52px auto;text-align:center}
+.choose h2{font-family:var(--sans);font-size:1.45rem;margin:0 0 6px}
+.choose p{color:var(--ink2);margin:0 0 22px}
+.choose .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.choose button{border:1px solid var(--ink);background:var(--sheet);border-radius:6px;padding:24px 12px;font-size:1.15rem;font-weight:700}
+.choose button small{display:block;font-weight:400;font-size:.82rem;color:var(--ink2);margin-top:6px}
+.choose button.en:hover{background:var(--en);color:#fff;border-color:var(--en)} .choose button.es:hover{background:var(--es);color:#fff;border-color:var(--es)}
+.choose button:hover small{color:#fff}
+
+footer{margin-top:48px;padding-top:14px;border-top:1px solid var(--rule);color:var(--muted);font-size:.8rem;max-width:78ch}
+
+@media (max-width:900px){
+  .wrap{padding:0 16px 72px}
+  .layout{grid-template-columns:minmax(0,1fr)}
+  .ghead{grid-template-columns:1fr;padding:16px}
+  .langs{margin-left:0}
+  .tabs{overflow-x:auto}
+  .tab{padding:11px 11px 8px}
+  .mini,.keys{display:none}
+  .pa{grid-template-columns:26px minmax(0,1fr)}
+  .pa .ans,.pa .ansv{grid-column:2;justify-self:start;margin-top:8px}
+  .hend{padding-left:0}
+  /* 카드는 아래에서 올라오는 판. 뜻풀이 줄의 말을 누르면 열린다 */
+  aside.card{display:none;position:fixed;left:0;right:0;bottom:0;top:auto;max-height:58vh;margin:0;border-width:2px 0 0;border-radius:0;z-index:9;box-shadow:0 -8px 24px rgba(22,35,28,.14)}
+  aside.card.show{display:block}
+  .line{font-size:.82rem;border-spacing:2px}
+  .line td a,.line th{width:23px}
+  .choose .two{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
