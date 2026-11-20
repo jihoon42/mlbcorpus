@@ -20,3 +20,6 @@ notebooks/_*.png
 .DS_Store
 .idea/
 .vscode/
+
+# Claude 데스크톱 앱이 만든 폴더
+Claude outputs/
