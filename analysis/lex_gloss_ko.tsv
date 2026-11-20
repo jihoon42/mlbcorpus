@@ -1,0 +1,927 @@
+lang	unit	cls	ko
+en	inning	*	이닝, 회
+en	rbi	*	타점
+en	single	N	단타, 1루타
+en	single	V	단타를 치다
+en	lead	N	리드, 앞선 점수
+en	lead	V	앞서다, 이끌다
+en	home run	*	홈런
+en	top	*	(이닝의) 초
+en	bottom	*	(이닝의) 말
+en	double	N	2루타
+en	double	V	2루타를 치다
+en	two-run	*	2점짜리 (two-run homer: 2점 홈런)
+en	three-run	*	3점짜리
+en	score	V	(주자를) 불러들이다 / 득점하다, 홈을 밟다
+en	score	N	점수, 스코어
+en	give	*	(리드를) 안겨 주다
+en	homer	N	홈런 (home run의 줄임말)
+en	homer	V	홈런을 치다
+en	game	*	경기
+en	make	*	(수비를) 해내다 (make a catch: 잡아내다)
+en	first	*	첫, 1루의
+en	second	*	두 번째의, 2루
+en	third	*	세 번째의, 3루
+en	fourth	*	네 번째의
+en	left field	*	좌익수 쪽 외야
+en	right field	*	우익수 쪽 외야
+en	center field	*	중견수 쪽 외야
+en	hit	V	치다
+en	hit	N	안타
+en	extend	*	(리드·연속 기록을) 늘리다
+en	strike out	*	삼진을 잡다 / 삼진을 당하다
+en	base	*	루, 베이스
+en	field	N	경기장, 외야
+en	field	V	(타구를) 처리하다
+en	win	N	승리
+en	win	V	이기다
+en	catch	N	포구, 잡아낸 수비
+en	catch	V	잡다
+en	get	*	(아웃을) 잡아내다 (get A to ground out: A를 땅볼로 잡다)
+en	deficit	*	뒤진 점수 차
+en	tie	*	동점을 만들다
+en	sacrifice fly	*	희생플라이
+en	sac fly	*	희생플라이 (줄임말)
+en	cut	*	(점수 차를) 줄이다
+en	end	*	끝내다 (end the inning: 이닝을 끝내다)
+en	out	N	아웃
+en	out	M	아웃된
+en	run	N	점수, 득점
+en	run	V	달리다
+en	put	*	(어떤 상태에) 놓다 (put A ahead: A를 앞서게 하다)
+en	crush	*	(공을) 강하게 쳐서 멀리 보내다
+en	left-center	*	좌중간
+en	right-center	*	우중간
+en	season	*	시즌
+en	save	N	세이브
+en	save	V	(점수를) 막아 내다
+en	line	V	라인드라이브로 치다
+en	line	N	선 (down the line: 선상으로)
+en	secure	*	(승리를) 지켜 내다
+en	seal	*	(승리를) 매듭짓다
+en	plate	V	(주자를) 홈으로 불러들이다
+en	plate	N	홈플레이트
+en	double play	*	병살
+en	final out	*	마지막 아웃
+en	diving	*	몸을 날린 (diving catch: 다이빙 캐치)
+en	wall	*	담장
+en	jam	*	위기 (escape a jam: 위기를 벗어나다)
+en	escape	*	(위기를) 벗어나다
+en	rip	*	낮고 빠른 강한 타구를 날리다
+en	groundout	*	땅볼 아웃
+en	board	*	점수판 (on the board: 첫 득점)
+en	increase	*	(리드를) 벌리다
+en	triple	N	3루타
+en	triple	V	3루타를 치다
+en	slide	*	슬라이딩하다
+en	strikeout	*	삼진
+en	stop	*	(타구를) 막아 낸 수비
+en	ball	*	공, 타구
+en	go-ahead	*	앞서 나가는, 역전의
+en	k	V	삼진을 잡다 (K는 삼진 기호)
+en	k	N	삼진 (K)
+en	belt	*	(공을) 강하게 쳐 내다
+en	play	N	플레이, 수비 동작
+en	play	V	플레이하다
+en	record	*	기록하다
+en	swing	*	방망이를 휘두르다 (strike out swinging: 헛스윙 삼진)
+en	drive	*	(타구를) 강하게 보내다
+en	nab	*	(주자를) 잡아내다
+en	career	*	통산, 선수 경력
+en	left	*	좌측, 좌익수 쪽
+en	right	*	우측, 우익수 쪽
+en	center	*	가운데, 중견수 쪽
+en	middle	*	가운데 (up the middle: 중앙으로)
+en	drive in	*	타점을 올리다, (주자를) 불러들이다
+en	bring home	*	(주자를) 홈으로 불러들이다
+en	bring in	*	(주자를) 불러들이다
+en	bring	*	불러들이다
+en	steal	*	도루하다
+en	grab	*	잡아낸 수비
+en	error	*	실책
+en	solo	*	솔로 (주자 없는 1점 홈런)
+en	earn	*	(세이브·승리를) 따내다
+en	throw	N	송구
+en	throw	V	던지다, 송구하다
+en	launch	*	(공을) 높이 멀리 쏘아 올리다
+en	lift	*	(공을) 띄워 보내다
+en	bases-loaded	*	만루의
+en	drill	*	총알같이 쳐 내다
+en	fan	*	삼진으로 돌려세우다 (헛스윙을 끌어내다)
+en	ground out	*	땅볼로 아웃되다
+en	fly out	*	뜬공으로 아웃되다
+en	line out	*	직선타로 아웃되다
+en	pop out	*	내야 뜬공으로 아웃되다
+en	smack	*	(공을) 강하게 때리다
+en	walk	N	볼넷
+en	walk	V	(타자를) 볼넷으로 내보내다 / 볼넷으로 걸어 나가다
+en	hr	*	홈런 (HR)
+en	retire	*	(타자를) 아웃시키다
+en	left-field	*	좌익수 쪽의
+en	right-field	*	우익수 쪽의
+en	center-field	*	중견수 쪽의
+en	nice	*	멋진
+en	runner	*	주자
+en	score on	*	…로 득점하다 (score on an error: 실책으로 득점)
+en	ground	*	땅볼을 치다
+en	game-tying	*	동점을 만드는
+en	wild pitch	*	폭투
+en	deep	*	깊숙한 (go deep: 홈런을 치다)
+en	lace	*	날카로운 라인드라이브를 치다
+en	throw out	*	송구로 아웃시키다
+en	line drive	*	라인드라이브, 직선타
+en	sharp line drive	*	강한 라인드라이브
+en	fly ball	*	뜬공
+en	ground ball	*	땅볼
+en	grounder	*	땅볼
+en	liner	*	라인드라이브 타구
+en	take	*	가져가다 (take the lead: 리드를 잡다)
+en	home	*	홈
+en	great	*	훌륭한
+en	review	*	비디오 판독
+en	leap	*	뛰어오르다
+en	leaping	*	뛰어오른 (leaping catch)
+en	strand	*	(주자를) 잔루로 남기다
+en	turn	*	(병살을) 완성하다 (turn two)
+en	victory	*	승리
+en	load	*	(베이스를) 채우다 (load the bases: 만루를 만들다)
+en	fielder's choice	*	야수 선택
+en	early	*	이른, 경기 초반의
+en	leadoff	*	선두 타자의, 이닝 첫
+en	allow	*	허용하다
+en	hammer	*	(공을) 망치질하듯 강타하다
+en	walk-off	*	끝내기
+en	scoring	*	득점 (open the scoring: 선취점을 올리다)
+en	grand slam	*	만루홈런
+en	pitch	*	투구, 공
+en	send	*	(공을) 날려 보내다
+en	induce	*	(땅볼·병살을) 유도하다
+en	crank	*	(공을) 힘껏 쳐 올리다
+en	call	N	판정
+en	call	V	판정하다
+en	call out	*	(called out on strikes: 루킹 삼진을 당하다)
+en	open	*	(득점을) 열다
+en	trim	*	(점수 차를) 좁히다
+en	keep	*	지키다, 유지하다
+en	start	*	시작하다 (start a double play: 병살을 시작하다)
+en	push	*	(리드를) 밀어 올리다
+en	slick	*	깔끔한 (수비)
+en	smash	V	(공을) 박살 내듯 강타하다
+en	smash	N	강타, 홈런
+en	ahead	*	앞선
+en	look	*	지켜보다 (strike out looking: 루킹 삼진)
+en	reach	*	출루하다 (reach on an error: 실책으로 출루)
+en	forceout	*	포스아웃
+en	force	*	포스아웃시키다
+en	rob	V	(안타·홈런을) 빼앗다
+en	rob	N	안타·홈런을 빼앗은 수비
+en	complete	*	완성하다
+en	smooth	*	매끄러운
+en	knock	V	(안타를) 쳐 내다
+en	knock	N	안타 (속어)
+en	year	*	해, 년
+en	side	*	(strike out the side: 한 이닝 세 타자를 모두 삼진)
+en	incredible	*	믿기 힘든
+en	challenge	N	챌린지 (비디오 판독 요청)
+en	challenge	V	챌린지를 신청하다
+en	line-drive	*	라인드라이브성의
+en	overturn	*	(판정을) 번복하다
+en	uphold	*	(판정을) 유지하다
+en	confirm	*	(판정을) 확정하다
+en	stand	*	(판정이) 유지되다
+en	corner	*	구석 (외야 코너)
+en	foul territory	*	파울 지역
+en	foul tip	*	파울팁
+en	pad	*	(리드를) 더 벌리다
+en	infield	*	내야
+en	long	*	긴, 장타의
+en	impressive	*	인상적인
+en	throwing error	*	송구 실책
+en	fielding error	*	포구 실책
+en	close out	*	(경기를) 마무리하다
+en	lock down	*	틀어막다
+en	mlb	*	메이저리그
+en	lay out	*	몸을 던지다
+en	dive	*	몸을 날리다
+en	follow	*	뒤따르다
+en	draw	*	(볼넷을) 골라내다
+en	rope	*	밧줄처럼 곧은 강한 타구를 치다
+en	gap	*	외야수 사이 공간 (좌중간·우중간)
+en	pick up	*	따내다, 기록하다
+en	leave	*	떠나다 (leave the yard: 담장을 넘기다)
+en	shortstop	*	유격수
+en	pitcher	*	투수
+en	catcher	*	포수
+en	first baseman	*	1루수
+en	second baseman	*	2루수
+en	third baseman	*	3루수
+en	left fielder	*	좌익수
+en	center fielder	*	중견수
+en	right fielder	*	우익수
+en	jack	*	홈런 (속어)
+en	pull	*	당겨 치다
+en	strong throw	*	강한 송구
+en	backhand	*	백핸드로 잡다
+en	trouble	*	위기
+en	safe	*	세이프
+en	glove	*	글러브
+en	inning-ending	*	이닝을 끝내는
+en	ground-rule	*	그라운드룰 (ground-rule double: 인정 2루타)
+en	add	*	보태다
+en	collect	*	기록하다, 쌓다
+en	sweet	*	멋진, 깔끔한
+en	clobber	*	(공을) 두들겨 패듯 강타하다
+en	run-scoring	*	득점을 올리는, 적시의
+en	shallow	*	얕은 (외야 앞쪽)
+en	snag	N	낚아챈 수비
+en	snag	V	낚아채다
+en	slug	*	장타를 치다
+en	dp	*	병살 (DP)
+en	break	*	깨다 (break the tie: 균형을 깨다)
+en	streak	*	연속 기록
+en	slap	*	가볍게 밀어 치다
+en	go	*	가다 (go deep: 홈런을 치다)
+en	go deep	*	홈런을 치다
+en	fantastic	*	환상적인
+en	seat	*	관중석
+en	perfect	*	완벽한
+en	sky	*	높이 띄워 올리다
+en	door	*	문 (slam the door: 경기를 틀어막다)
+en	club	*	(공을) 방망이로 후려치다
+en	bat	*	방망이, 타석
+en	get out	*	(위기에서) 벗어나다
+en	smoke	*	총알 같은 타구를 날리다
+en	tower	*	높이 솟구치는 타구를 치다
+en	strike	*	스트라이크
+en	bases-clearing	*	주자를 모두 불러들이는 (싹쓸이)
+en	fire	*	(공을) 힘껏 던지다
+en	shutout	*	무실점 경기, 완봉
+en	advance	*	진루하다
+en	sharp	*	날카로운, 강한 (타구)
+en	sharply	*	날카롭게, 강하게
+en	soft	*	약한 (타구)
+en	softly	*	약하게
+en	bunt	*	번트
+en	sacrifice bunt	*	희생번트
+en	deflect	*	(타구가) 굴절되다
+en	tag play	*	태그 플레이
+en	intentionally	*	고의로 (intentionally walk: 고의사구)
+en	bloop	*	빗맞아 내야와 외야 사이에 떨어지는 타구를 치다
+en	flare	*	빗맞은 뜬 타구를 치다
+en	poke	*	툭 밀어 치다
+en	demolish	*	(공을) 부숴 버리듯 강타하다
+en	mash	*	(공을) 으깨듯 강타하다
+en	blast	*	대형 홈런
+en	shot	*	홈런, 강한 타구
+en	dinger	*	홈런 (속어)
+en	whiff	*	헛스윙 삼진으로 잡다
+en	freeze	*	루킹 삼진으로 얼려 버리다
+en	punch out	*	삼진으로 잡다
+en	steal home	*	홈스틸을 하다
+en	pick off	*	견제로 잡다
+en	caught stealing	*	도루 실패
+es	entrada	*	이닝, 회
+es	inning	*	이닝
+es	episodio	*	이닝 ('회차')
+es	capítulo	*	이닝 ('장')
+es	ventaja	*	리드, 앞선 점수
+es	desventaja	*	뒤진 점수 차
+es	déficit	*	뒤진 점수 차
+es	sencillo	*	단타
+es	doble	*	2루타
+es	doblete	*	2루타
+es	triple	*	3루타
+es	jonrón	*	홈런
+es	cuadrangular	*	홈런 ('네 베이스짜리')
+es	bambinazo	*	홈런 (베이브 루스의 별명 '밤비노'에서 온 말)
+es	vuelacercas	*	홈런 ('담장을 넘는 것')
+es	tablazo	*	큰 한 방, 홈런
+es	estacazo	*	큰 한 방, 홈런
+es	bombazo	*	대형 홈런 ('폭탄')
+es	vuelta entera	*	홈런 ('한 바퀴 다 도는 타구')
+es	hr	*	홈런 (HR)
+es	jonrón solitario	*	솔로 홈런
+es	hr solitario	*	솔로 홈런
+es	grand slam	*	만루홈런
+es	hit	*	안타
+es	imparable	*	안타 ('막을 수 없는 것')
+es	batazo	*	타구, 큰 타격
+es	carrera	*	점수, 득점
+es	rayas	*	점수 (속어, '줄')
+es	raya	*	점수 (속어, '줄')
+es	conectar	*	(안타·홈런을) 쳐 내다
+es	pegar	*	치다, 때리다
+es	batear	*	치다, 타격하다
+es	disparar	*	(타구를) 쏘다
+es	despachar	*	(홈런을) 날려 보내다 ('발송하다')
+es	detonar	*	(홈런을) 터뜨리다
+es	descargar	*	(홈런을) 터뜨리다 ('쏟아붓다')
+es	desatar	*	(홈런을) 터뜨리다 ('풀어놓다')
+es	sacudir	*	(홈런을) 후려치다 ('흔들다')
+es	sonar	*	(안타·홈런을) 터뜨리다 ('울리다')
+es	volarse	*	(담장을) 넘기다
+es	desaparecer	*	(공을) 사라지게 하다, 담장을 넘기다
+es	mandar	*	보내다 (mandar la pelota: 공을 날려 보내다)
+es	juego	*	경기
+es	partido	*	경기
+es	dar	*	주다 (dar ventaja: 리드를 안기다)
+es	poner	*	놓다 (poner arriba: 앞서게 하다)
+es	remolcar	*	타점을 올리다 (주자를 '끌어오다')
+es	impulsar	*	타점을 올리다 (주자를 '밀어 주다')
+es	empujar	*	타점을 올리다 (주자를 '밀어 넣다')
+es	producir	*	(점수를) 만들어 내다
+es	traer	*	(주자를) 불러들이다
+es	remolcador	*	타점을 올리는 (hit remolcador: 적시타)
+es	productor	*	타점을 올리는, 적시의
+es	impulsor	*	타점을 올리는
+es	impulsador	*	타점을 올리는
+es	anotar	*	득점하다
+es	jardín	*	외야 ('정원')
+es	jardín izquierdo	*	좌익, 좌측 외야
+es	jardín derecho	*	우익, 우측 외야
+es	jardín central	*	중견, 가운데 외야
+es	bosque	*	외야 (속어, '숲')
+es	izquierdo	*	왼쪽의, 좌익
+es	derecho	*	오른쪽의, 우익
+es	central	*	가운데, 중견수 쪽
+es	lf	*	좌익 (LF)
+es	rf	*	우익 (RF)
+es	cf	*	중견 (CF)
+es	primero	*	첫, 1루의
+es	segundo	*	두 번째의, 2루의
+es	tercero	*	세 번째의, 3루의
+es	cuarto	*	네 번째의
+es	parte alto	*	(이닝의) 초 (parte alta)
+es	parte bajo	*	(이닝의) 말 (parte baja)
+es	alta	*	(이닝의) 초
+es	baja	*	(이닝의) 말
+es	victoria	*	승리
+es	triunfo	*	승리
+es	ponchar	*	삼진을 잡다
+es	poncharse	*	삼진을 당하다
+es	ponche	*	삼진
+es	abanicar	*	헛스윙 삼진으로 잡다 ('부채질하다')
+es	recetar	*	(삼진을) 잡다 ('처방하다')
+es	sentar	*	삼진으로 돌려세우다 ('앉히다')
+es	congelar	*	루킹 삼진으로 얼려 버리다
+es	tercer strike	*	세 번째 스트라이크
+es	chocolate	*	삼진 (속어)
+es	empatar	*	동점을 만들다
+es	empate	*	동점
+es	aumentar	*	(리드를) 늘리다
+es	ampliar	*	(리드를) 벌리다
+es	extender	*	(리드를) 늘리다
+es	reducir	*	(점수 차를) 줄이다
+es	recortar	*	(점수 차를) 줄이다
+es	acercar	*	(점수 차를) 좁히다
+es	cortar	*	끊다, 줄이다
+es	base	*	루, 베이스
+es	out	*	아웃
+es	último out	*	마지막 아웃
+es	out forzado	*	포스아웃
+es	retirar	*	(타자를) 아웃시키다
+es	dominar	*	(타자를) 제압하다
+es	sellar	*	(승리를) 매듭짓다
+es	asegurar	*	(승리를) 지켜 내다
+es	cerrar	*	마무리하다
+es	terminar	*	끝내다
+es	completar	*	완성하다
+es	arriba	*	앞선, 위로
+es	hacer	*	하다 (hacer una atrapada: 잡아내다)
+es	realizar	*	해내다
+es	lograr	*	해내다, 따내다
+es	conseguir	*	얻어 내다, 잡아내다
+es	registrar	*	기록하다
+es	gran	*	큰, 멋진
+es	buen	*	좋은
+es	bonito	*	멋진
+es	increíble	*	믿기 힘든
+es	elevado de sacrificio	*	희생플라이
+es	fly de sacrificio	*	희생플라이
+es	sacrificio	*	희생타
+es	roletazo	*	땅볼
+es	rodado	*	땅볼
+es	elevado	*	뜬공
+es	línea	*	라인드라이브
+es	atrapada	*	포구, 잡아낸 수비
+es	atrapado	*	잡아낸
+es	atrapar	*	잡다
+es	capturar	*	잡아내다
+es	captura	*	포구
+es	fildear	*	(타구를) 처리하다
+es	fildeo	*	수비
+es	lucirse	*	멋진 플레이를 펼치다
+es	lanzarse	*	몸을 던지다
+es	deslizarse	*	슬라이딩하다
+es	deslizar	*	슬라이딩하다
+es	saltar	*	뛰어오르다
+es	salto	*	점프
+es	correr	*	달리다
+es	bases llenas	*	만루
+es	jugada	*	플레이
+es	jugada de selección	*	야수 선택
+es	error	*	실책
+es	dejar	*	남기다 (dejar en base: 잔루로 남기다)
+es	tiro	*	송구
+es	tirar	*	방망이를 휘두르다 (tirándole: 헛스윙하며), 던지다
+es	lanzar	*	던지다
+es	lanzamiento	*	투구
+es	plato	*	홈플레이트
+es	home	*	홈
+es	sacar	*	(아웃을) 잡다, (공을) 넘기다
+es	pizarra	*	점수판, 스코어
+es	marcador	*	점수판, 스코어
+es	robar	*	훔치다 (도루하다, 안타를 빼앗다)
+es	robarse	*	도루하다
+es	abrir	*	열다 (abrir el marcador: 선취점을 올리다)
+es	iniciar	*	시작하다
+es	solitario	*	솔로의 (주자 없는)
+es	salvado	*	세이브
+es	salvamento	*	세이브
+es	apuro	*	위기
+es	amenaza	*	위기, 위협
+es	salir	*	벗어나다 (salir del apuro: 위기를 벗어나다)
+es	doble matanza	*	병살 ('이중 살해')
+es	doble play	*	병살
+es	dp	*	병살 (DP)
+es	pelota	*	공
+es	bola	*	공, 볼
+es	elevar	*	띄우다
+es	corredor	*	주자
+es	boleto	*	볼넷 ('표')
+es	base por bolas	*	볼넷
+es	golpeado por lanzamiento	*	몸에 맞는 공
+es	cuadro	*	내야
+es	pared	*	담장
+es	barda	*	담장
+es	llegar	*	도달하다
+es	revisión	*	비디오 판독
+es	inducir	*	유도하다
+es	recibir	*	받다 (recibir base por bolas: 볼넷을 얻다)
+es	mantener	*	유지하다
+es	temporada	*	시즌
+es	tomar	*	잡다 (tomar ventaja: 리드를 잡다)
+es	romper	*	깨다 (romper el empate: 균형을 깨다)
+es	sumar	*	보태다
+es	mlb	*	메이저리그
+en	up	M	(점수가) 앞서, 위로
+en	away	M	멀리, 원정
+en	time	N	번, 차례
+en	try	V	시도하다
+en	last	M	마지막, 지난
+en	back	M	뒤로, 다시
+en	pass	V	(기록 순위에서) 넘어서다 (passed ball: 포일)
+en	night	N	밤, 밤 경기
+en	innings	N	이닝 (여러 회)
+en	short	M	짧은 (short hop: 짧게 튄 바운드)
+en	amazing	M	놀라운
+en	crack	V	날카롭게 때려 내다
+en	extra	M	추가의 (extra innings: 연장, extra bases: 장타)
+en	terrific	M	훌륭한
+en	drop	V	(타구를 빈 곳에) 떨어뜨리다, 놓치다
+en	left-center-field	M	좌중간 쪽의
+en	fifth	M	5회, 다섯 번째
+en	fastball	N	직구
+en	quick	M	빠른
+en	drive home	V	(주자를) 타점으로 불러들이다
+en	no-hitter	N	노히터 (안타를 하나도 내주지 않은 경기)
+en	high	M	높은, 높게
+en	pair	N	두 개 (a pair of: 두 개의)
+en	right-center-field	M	우중간 쪽의
+en	break up	V	(노히터·병살을) 깨다
+en	sixth	M	6회, 여섯 번째
+en	combine	V	힘을 합치다, 합작하다
+en	flyout	N	뜬공 아웃
+en	connect	V	제대로 맞히다
+en	barehanded play	N	맨손 수비
+en	threat	N	득점 위기
+en	notch	V	(기록을) 올리다
+en	shut	V	틀어막다 (shut the door: 경기를 매듭짓다)
+en	foul	M	파울의
+en	show off	V	(솜씨를) 뽐내다
+en	bounce	V	바운드되다, 땅볼로 튀기다
+en	day	N	날, 낮 경기
+en	beat	V	이기다, (송구보다) 먼저 닿다
+en	exit	V	경기에서 빠지다
+en	go back	V	(타구를 쫓아) 뒤로 물러나다
+en	original call	N	원심 (처음 내린 판정)
+en	frame	N	이닝
+en	stellar	M	눈부신
+en	take away	V	(안타·홈런을) 빼앗다
+en	clear	V	(담장을) 넘기다, (베이스를) 싹쓸이하다
+en	tag up	V	태그업하다 (뜬공이 잡힌 뒤 진루하다)
+en	front	N	앞 (in front of: ~앞에)
+en	flip	V	가볍게 토스하다
+en	flip	N	가벼운 토스
+en	attempt	V	시도하다
+en	attempt	N	시도
+en	tag	N	태그
+en	tag	V	태그하다
+en	warning track	N	워닝 트랙 (담장 바로 앞 흙길)
+en	outing	N	등판
+en	ground-ball	M	땅볼의
+en	fence	N	담장
+en	begin	V	시작하다
+en	range	V	넓게 움직여 타구를 쫓다
+en	over-the-shoulder	M	어깨 너머로 받는
+en	nifty	M	솜씨 좋은
+en	knot	V	동점을 만들다
+en	mph	N	시속 마일
+en	spin	V	몸을 돌리다
+en	spectacular	M	환상적인
+en	hard-hit	M	강하게 맞은
+en	debut	N	데뷔
+en	hard	M	강한, 강하게
+en	scoreless	M	무실점의
+en	opposite-field	M	밀어 친 방향의
+en	race	V	내달리다
+en	comebacker	N	투수 정면으로 오는 타구
+en	final	M	마지막
+en	bag	N	베이스
+en	ninth	M	9회, 아홉 번째
+en	toss	V	던지다 (toss a scoreless inning: 한 이닝을 무실점으로 막다)
+en	lead	M	앞선 (lead runner: 선행 주자)
+en	scoring position	N	득점권
+en	stretch	V	몸을 쭉 뻗다, (리드를) 벌리다
+en	at-bat	N	타석
+en	cross	V	(홈을) 밟다
+en	eighth	M	8회, 여덟 번째
+en	come home	V	홈으로 들어오다
+en	swipe	V	(베이스를) 훔치다
+en	straight	M	연속 (third straight: 3연속)
+en	deep enough	M	(희생플라이가 될 만큼) 충분히 깊은
+en	pinch-hit	M	대타로 나와 친
+en	pinch-hit	N	대타 안타
+en	work out	V	(위기에서) 벗어나다
+en	clutch	M	결정적인 순간에 나온
+en	clutch	N	결정적인 순간
+en	charge	V	앞으로 달려들다
+en	help	V	돕다
+en	deliver	V	(필요한 한 방을) 쳐 주다
+en	hustle	V	전력으로 뛰다
+en	foot	N	피트 (거리 단위), 발
+en	way	N	쪽, 길 (all the way: 끝까지)
+en	preserve	V	(리드를) 지켜 내다
+en	damage	N	실점 (limit the damage: 실점을 줄이다)
+en	outstanding	M	뛰어난
+en	no-hit	M	노히트의
+en	come in	V	들어오다 (득점하다, 구원 등판하다)
+en	cut down	V	(뛰는 주자를) 잡아내다
+en	tough	M	까다로운
+en	power	V	힘으로 이끌다, 힘껏 날리다
+en	relay	N	중계 플레이
+en	close	V	(경기를) 마무리하다
+en	close	M	아슬아슬한
+en	finish	V	끝내다
+en	sensational	M	굉장한
+en	seventh	M	7회, 일곱 번째
+en	rundown	N	런다운 (협살)
+en	opposite	M	반대쪽의
+en	jumping	N	뛰어오르며 하는 동작
+en	ballgame	N	경기
+en	mound	N	마운드
+en	quickly	M	재빨리
+en	foul pole	N	파울 폴
+en	big fly	N	홈런 (큰 타구)
+en	loft	V	높이 띄워 치다
+en	extra-base	M	장타의
+en	hbp	N	몸에 맞는 공
+en	comeback	N	역전, 복귀
+en	one-run	M	1점짜리, 1점 차의
+en	hitting streak	N	연속 경기 안타
+en	team	N	팀
+en	limit	V	(실점을) 줄이다
+en	flash	V	(솜씨를) 번뜩이다 (flash the leather: 호수비를 보이다)
+en	narrow	V	(점수 차를) 좁히다
+en	charge in	V	앞으로 달려 들어오다
+en	work	V	(볼넷을) 골라내다, (이닝을) 던지다
+en	tag out	V	태그아웃시키다
+en	finish off	V	마무리 짓다
+en	potential	M	~이 될 수 있는
+en	jump	V	뛰어오르다
+en	jump	N	점프, 스타트
+en	advantage	N	리드, 우위
+en	fly	N	뜬공
+en	clinch	V	(우승·진출을) 확정하다
+en	injury	N	부상
+en	swat	V	휘둘러 쳐 내다
+en	straightaway	N	정면 (straightaway center: 한가운데 중견수 방향)
+en	insurance run	N	쐐기점
+en	list	N	명단, 순위
+en	prevent	V	막다
+en	spinning	N	몸을 돌리며 하는 동작
+en	bid	N	(기록) 도전 (no-hit bid: 노히터 도전)
+en	athletic	M	운동 능력이 돋보이는
+en	track	V	(타구를) 쫓아가다
+en	pick	N	어려운 바운드를 걷어 낸 수비, 견제
+en	leather	N	글러브 (수비 솜씨)
+en	avoid	V	피하다
+en	slam	V	강하게 때리다, 부딪히다
+en	big league	N	빅리그 (메이저리그)
+en	race home	V	홈으로 내달리다
+en	outfield	N	외야
+en	lead off	V	이닝의 첫 타자로 나서다
+en	execute	V	(작전을) 해내다
+en	set	V	(기록을) 세우다
+en	running	M	달리면서 하는
+en	running	N	달리며 하는 동작
+en	pop	N	내야 뜬공
+en	batter	N	타자
+en	popup	N	내야 뜬공
+en	game-ending	M	경기를 끝내는
+en	consecutive	M	연속된
+en	bullpen	N	불펜
+en	unassisted	M	혼자 처리한
+en	dish	N	홈플레이트
+en	tremendous	M	엄청난
+en	safely	M	세이프로, 무사히
+en	beat out	V	(내야 안타를) 발로 만들어 내다
+en	balk	N	보크
+en	able	M	~할 수 있는
+en	second deck	N	2층 관중석
+en	roll	V	굴리다, 구르다
+en	sprint	V	전력 질주하다
+en	two-out	M	2사 후의
+en	scoreboard	N	전광판
+en	basket catch	N	바스켓 캐치 (배 앞에서 받는 포구)
+en	track down	V	쫓아가서 잡아내다
+en	history	N	역사 (in history: 역대)
+en	scorch	V	불같이 강하게 때리다
+en	head	N	머리
+en	cover	V	(베이스를) 커버하다
+en	finishing touch	N	마무리 한 방
+en	third-base	M	3루 쪽의
+en	rule	V	판정하다
+en	chase	V	쫓다, (투수를) 강판시키다
+en	half	N	이닝의 절반 (초 또는 말)
+en	crash	V	부딪히다
+en	chop	V	내리찍듯 쳐서 크게 튀기다
+en	become	V	~이 되다
+en	continue	V	이어 가다
+en	reduce	V	줄이다
+en	other way	N	밀어 친 방향 (go the other way: 밀어 치다)
+en	series	N	시리즈
+en	knee	N	무릎
+en	strong	M	강한
+en	stay	V	머물다, 유지하다
+en	chopper	N	크게 튀는 땅볼
+en	heads-up	M	재치 있는
+en	step on	V	(베이스를) 밟다
+en	miss	V	놓치다, 헛치다
+en	hole	N	내야수 사이의 빈틈
+en	defensive	M	수비의
+en	barehanded	M	맨손의
+en	loop	V	느린 포물선으로 넘기다
+en	scoop	N	원바운드 송구를 걷어 올리는 수비
+en	lay down	V	(번트를) 대다
+en	interference	N	방해
+en	umpire	N	심판
+en	swinging	N	헛스윙
+en	tying run	N	동점 주자, 동점 득점
+en	all-time	M	역대
+en	tally	V	(득점·기록을) 올리다
+en	defense	N	수비
+en	first-base	M	1루 쪽의
+en	serve	V	가볍게 받아쳐 보내다
+en	no-no	N	노히터
+en	return	N	복귀
+en	off-balance	M	중심이 흐트러진 채 하는
+en	lunge	V	몸을 내던지듯 뻗다
+en	big	M	큰, 중요한
+en	ab	N	타석
+en	al	N	아메리칸리그
+en	nl	N	내셔널리그
+en	wp	N	폭투
+en	fc	N	야수 선택
+en	il	N	부상자 명단
+es	gracias	N	덕분 (gracias a: ~덕분에)
+es	número	N	~호, ~번째
+es	año	N	해, 년
+es	prender	V	불을 붙이다 (prender la pizarra: 득점판에 불을 켜다)
+es	frente	N	앞 (poner al frente: 앞서게 하다)
+es	favor	N	유리한 쪽 (a favor de: ~이 앞서도록)
+es	ser	V	~이다
+es	fin	N	끝 (poner fin a: ~을 끝내다)
+es	centro	N	가운데
+es	oro	N	금 (hit de oro: 끝내기 안타)
+es	fallar	V	못 맞히다, 범타로 물러나다
+es	dentro	M	안 (dentro del cuadro: 내야 안에서)
+es	pie	N	피트 (거리 단위), 발
+es	sac fly	N	희생플라이
+es	lanzamiento descontrolado	*	폭투
+es	roleta	N	땅볼
+es	botar	V	(공을) 담장 밖으로 넘기다
+es	colocar	V	놓다 (colocar arriba: 앞서게 하다)
+es	clavado	M	몸을 날려 (de clavado: 다이빙으로)
+es	llevar	V	가져가다, (주자를) 보내다
+es	sexto	M	6회, 여섯 번째
+es	permitir	V	허용하다
+es	fuerte	M	강한, 강하게
+es	espectacular	*	환상적인
+es	campo	N	경기장 (campo corto: 유격수, campo opuesto: 밀어 친 쪽)
+es	cierre	N	(이닝의) 말
+es	salvar	V	세이브를 올리다, 구해 내다
+es	aprieto	N	위기 (salir del aprieto: 위기를 벗어나다)
+es	tercer	M	세 번째
+es	empujador	N	타점을 올린 (sencillo empujador: 적시타)
+es	séptimo	M	7회, 일곱 번째
+es	escapar	V	(위기에서) 벗어나다
+es	quinto	M	5회, 다섯 번째
+es	tablero	N	득점판
+es	despegar	V	(점수 차를 벌려) 달아나게 하다
+es	después	M	뒤에
+es	inicial	N	1루
+es	ganar	V	이기다
+es	acto	N	이닝
+es	foul	*	파울
+es	octavo	M	8회, 여덟 번째
+es	finalizar	V	끝내다
+es	defensa	N	수비
+es	cerca	M	가까이
+es	evitar	V	피하다, 막다
+es	delante	M	앞에 (poner delante: 앞서게 하다)
+es	impresionante	M	대단한
+es	pradera	N	외야 (pradera izquierda: 좌익)
+es	lucir	V	(멋진 수비로) 빛나다
+es	racha	N	연속 기록
+es	corto	M	짧은 (campo corto: 유격수)
+es	liberar	V	(홈런을) 터뜨리다
+es	pasar	V	지나가다, 넘어서다
+es	medio	N	가운데 (por el medio: 한가운데로)
+es	embasarse	V	출루하다
+es	profundo	M	깊은
+es	guante	N	글러브
+es	toque	N	번트
+es	noveno	M	9회, 아홉 번째
+es	mal	M	나쁜 (mal tiro: 악송구)
+es	prado	N	외야 (prado derecho: 우익)
+es	tiempo	N	시간 (a tiempo: 제때)
+es	obtener	V	얻다
+es	confirmar	V	(판정을) 그대로 확정하다
+es	terreno	N	그라운드 (dejar en el terreno: 끝내기로 이기다)
+es	consecutivo	M	연속된
+es	swing	N	스윙
+es	ileso	M	실점 없이 (salir ileso: 무실점으로 넘기다)
+es	bordo	N	루상 (a bordo: 주자가 나가 있는)
+es	vez	N	번, 차례
+es	parada	N	호수비, 타구를 막아 냄
+es	volar	V	날다 (volarse la cerca: 담장을 넘기다)
+es	final	M	마지막
+es	final	N	끝
+es	concretar	V	(플레이를) 완성하다
+es	apertura	N	선발 등판
+es	pescar	V	(주자를) 잡아내다
+es	tramo	N	이닝
+es	ejecutar	V	(플레이를) 해내다
+es	wild pitch	N	폭투
+es	largo	M	긴, 멀리 가는
+es	bate	N	방망이
+es	temprano	M	일찍, 초반에
+es	par	N	두 개 (un par de: 두 개의)
+es	revés	N	백핸드 (de revés: 백핸드로)
+es	cruzar	V	(홈을) 밟다
+es	regla	N	규칙 (doble por regla: 인정 2루타)
+es	pitcheo	N	투구
+es	mano limpio	*	맨손 (a mano limpia: 맨손으로)
+es	rollo	N	땅볼
+es	esquina	N	코너 (esquina caliente: 3루)
+es	fondo	N	깊숙한 곳
+es	detener	V	막아 세우다
+es	problema	N	위기
+es	otorgar	V	(볼넷을) 내주다
+es	adelante	M	앞으로 (poner adelante: 앞서게 하다)
+es	cabeza	N	머리 (de cabeza: 머리부터 들어가는)
+es	adelantar	V	앞서게 하다
+es	encima	M	위로 (por encima de: ~을 넘어)
+es	excelente	M	훌륭한
+es	entrar	V	들어오다
+es	campocorto	N	유격수
+es	base robado	*	도루
+es	territorio	N	지역 (territorio de foul: 파울 지역)
+es	apuntar	V	(세이브·승리를) 기록하다
+es	intentar	V	시도하다
+es	rápido	M	빠른
+es	avanzar	V	진루하다
+es	casa lleno	*	만루 (con casa llena: 만루에서)
+es	vuelta	N	한 바퀴 (vuelta entera: 홈런)
+es	pelotazo	N	몸에 맞는 공
+es	décimo	M	10회, 열 번째
+es	intento de robo	N	도루 시도
+es	izquierda	N	왼쪽, 좌익
+es	soltar	V	(방망이를 돌려) 날리다
+es	anotación	N	득점
+es	aprovechar	V	(기회를) 살리다
+es	perfecto	M	완벽한
+es	golpear	V	때리다, (공으로) 맞히다
+es	sentencia	N	판정
+es	desafío	N	챌린지 (비디오 판독 요청)
+es	derecha	N	오른쪽, 우익
+es	goma	N	홈플레이트
+es	tremendo	M	엄청난
+es	robo	N	도루
+es	antes	M	전에
+es	fuera	M	밖으로
+es	video	N	비디오 판독
+es	desviado	M	빗나간 (tiro desviado: 악송구)
+es	registradora	N	홈 (pisar la registradora: 득점하다)
+es	convertir	V	~으로 만들다 (convertir el doble play: 병살을 완성하다)
+es	recta	N	직구
+es	blanqueo	N	영봉 (상대를 무득점으로 막은 경기)
+es	noche	N	밤
+es	quedar	V	남다, ~이 되다
+es	sector	N	쪽, 구역
+es	bonita atrapado	*	멋진 포구
+es	seguir	V	이어 가다
+es	empatado	M	동점인
+es	muro	N	담장
+es	vía	N	길 (por la vía del ponche: 삼진으로)
+es	strikes	N	스트라이크 (복수)
+es	sensacional	M	굉장한
+es	colgar	V	걸다 (colgar el cero: 무실점으로 막다)
+es	productivo	M	타점을 올린
+es	mph	N	시속 마일
+es	incrementar	V	늘리다
+es	mirar	V	지켜보다 (poncharse mirando: 루킹 삼진을 당하다)
+es	combinar	V	힘을 합치다
+es	anotarse	V	(기록을) 올리다
+es	outs	N	아웃 (복수)
+es	acortar	V	(점수 차를) 좁히다
+es	levantar	V	띄우다
+es	diferencia	N	점수 차
+es	quitar	V	빼앗다
+es	fly	N	뜬공
+es	impulsado	M	타점으로 들어온 (carrera impulsada: 타점)
+es	lado	N	쪽
+es	disparo	N	쏘아 보낸 송구나 타구
+es	tocar	V	번트를 대다, 태그하다
+es	caer	V	떨어지다
+es	negociar	V	(볼넷을) 얻어 내다
+es	depositar	V	(공을 관중석에) 꽂아 넣다
+es	estirar	V	몸을 뻗다, (리드를) 벌리다
+es	velocidad	N	속도
+es	daño	N	실점
+es	enviar	V	보내다
+es	apagar	V	끄다 (apagar el fuego: 위기를 잠재우다)
+es	turno	N	타석
+es	rola	N	땅볼
+es	potente	M	강력한
+es	alcanzar	V	닿다, (기록에) 도달하다
+es	enorme	M	거대한
+es	receptor	N	포수
+es	jugada defensivo	*	수비 플레이
+es	triplete	N	3루타
+es	posición	N	위치 (posición de anotar: 득점권)
+es	campaña	N	시즌
+es	apuntarse	V	(기록을) 올리다
+es	lanzador	N	투수
+es	completo	M	완전한 (juego completo: 완투)
+es	tratar	V	시도하다
+es	pentágono	N	홈플레이트
+es	decisión	N	판정
+es	debut	N	데뷔
+es	relevo	N	구원 등판, 중계 플레이
+es	error de fildeo	N	포구 실책
+es	primer	*	첫 번째
+es	seguido	M	연속된
+es	quieto	*	세이프
+es	error de tiro	N	송구 실책
+es	emparejar	V	동점을 만들다
+es	intento	N	시도
+es	igualar	V	동점을 만들다, (기록과) 타이를 이루다
+es	brisa	N	바람 (abanicar la brisa: 헛스윙하다)
+es	forzar	V	포스아웃시키다
+es	jonrones	N	홈런 (복수)
+es	rescate	N	세이브
+es	chocar	V	부딪히다
+es	brincar	V	뛰어오르다
+es	strike	N	스트라이크
+es	extra	*	추가의 (extra base: 장타, entradas extras: 연장)
+es	grada	N	관중석
+es	récord	N	기록
+es	último	M	마지막
+es	original	M	원래의 (decisión original: 원심)
+es	superar	V	넘어서다
+es	limitar	V	줄이다, 묶다
+es	mostrar	V	보여 주다
+es	caminar	V	볼넷으로 걸어 나가다
+es	ir	V	가다 (se va: 넘어가다)
+es	k	N	삼진
+es	k's	N	삼진 (복수)
+es	vs	N	대
+es	wp	N	폭투
+es	ss	N	유격수
+es	fc	N	야수 선택
+es	bb	N	볼넷
+es	perseguir	V	쫓아가다
+es	encender	V	불을 붙이다
+es	poder	V	~할 수 있다
+es	safe	*	세이프
+es	parte	N	부분 (parte alta: 초, parte baja: 말)
+en	down	*	아래로 (down the line: 선상을 따라)
+en	title	*	우승, 타이틀
+en	postseason	*	포스트시즌
+en	afternoon	*	오후
+en	key	*	중요한
+en	own	*	자신의
+es	jardinero	*	외야수
+es	coronar	*	정상에 올리다
