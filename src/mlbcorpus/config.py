@@ -30,12 +30,23 @@ def content_resource(language: str) -> str:
     return f"content.{language}"
 
 
+# 타석 기록 문장을 영어 외 언어로 한 번 더 받을 때의 리소스 이름과 필드 목록.
+# feed 에는 영어 문장만 있으므로 playByPlay?language=es 를 따로 받는다. fields 로 줄이면
+# 응답이 경기당 수십 KB 다. result.event·description 이 그 언어로 오고 eventType 은 언어 공통 키다.
+PBP_FIELDS = "allPlays,result,type,event,eventType,description,about,atBatIndex,inning,halfInning"
+
+
+def pbp_resource(language: str) -> str:
+    return f"pbp.{language}"
+
+
 @dataclass(frozen=True)
 class Settings:
     data_dir: Path = Path("data")
     seasons: tuple[int, ...] = DEFAULT_SEASONS
     game_types: tuple[str, ...] = DEFAULT_GAME_TYPES
     languages: tuple[str, ...] = DEFAULT_LANGUAGES
+    pbp_languages: tuple[str, ...] = ()  # 기본은 받지 않는다. `crawl --pbp es` 로 켠다
     requests_per_second: float = 3.0
     concurrency: int = 4
     timeout_seconds: float = 30.0
@@ -78,7 +89,12 @@ class Settings:
 
     def resource_names(self) -> tuple[str, ...]:
         """경기 하나가 '완료'로 간주되기 위해 필요한 리소스 목록."""
-        return (RESOURCE_FEED, *(content_resource(lang) for lang in self.languages), RESOURCE_WINPROB)
+        return (
+            RESOURCE_FEED,
+            *(content_resource(lang) for lang in self.languages),
+            RESOURCE_WINPROB,
+            *(pbp_resource(lang) for lang in self.pbp_languages),
+        )
 
     def resource_path(self, season: int, game_pk: int, resource: str) -> Path:
         return self.game_dir(season, game_pk) / f"{resource}.json.gz"

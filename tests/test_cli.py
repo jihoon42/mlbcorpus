@@ -41,3 +41,12 @@ def test_make_settings_overrides(tmp_path):
     assert settings.languages == ("en",)
     assert settings.resource_names() == ("feed", "content.en", "winprob")
     assert args.seasons == tuple(range(2019, 2027)) and args.game_types == ("R", "F", "D", "L", "W")
+
+
+def test_pbp_option_appends_resource():
+    args = cli.build_parser().parse_args(["crawl", "--pbp", "es"])
+    settings = cli.make_settings(args)
+    assert settings.resource_names() == ("feed", "content.en", "content.es", "winprob", "pbp.es")
+    # 기본값은 그대로 4개
+    default = cli.make_settings(cli.build_parser().parse_args(["crawl"]))
+    assert default.resource_names() == ("feed", "content.en", "content.es", "winprob")

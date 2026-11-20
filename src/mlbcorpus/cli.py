@@ -3,6 +3,7 @@
     mlbcorpus sample --pk 824464          경기 하나 받아서 요약 (연결·형식 확인)
     mlbcorpus crawl                        기본 범위(2019~2026, R+포스트시즌) 수집, 재실행하면 이어서
     mlbcorpus crawl --seasons 2025 --game-types R --limit 20
+    mlbcorpus crawl --seasons 2026 --pbp es   스페인어 타석 기록 문장(pbp.es)도 같이 받는다
     mlbcorpus status                       manifest 집계
     mlbcorpus meta                         코드표(eventTypes 등) 저장
     mlbcorpus dissect --pk 824464          경기 하나의 세 register 정렬 보고서 → docs/dissect/824464.md
@@ -81,6 +82,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--seasons", type=parse_seasons, default=DEFAULT_SEASONS, help="예: 2019-2026 또는 2023,2025")
     p.add_argument("--game-types", type=parse_csv, default=DEFAULT_GAME_TYPES, help="예: R 또는 R,F,D,L,W")
     p.add_argument("--languages", type=parse_csv, default=None, help="content 언어 (기본 en,es)")
+    p.add_argument("--pbp", type=parse_csv, default=None, help="타석 기록 문장을 추가로 받을 언어, 예: es (기본은 받지 않음)")
     p.add_argument("--rps", type=float, default=None, help="초당 요청 수 (기본 3)")
     p.add_argument("--concurrency", type=int, default=None, help="동시 경기 수 (기본 4)")
     p.add_argument("--limit", type=int, default=None, help="이번 실행에서 처리할 최대 경기 수")
@@ -114,6 +116,8 @@ def make_settings(args: argparse.Namespace) -> Settings:
     overrides: dict[str, object] = {}
     if getattr(args, "languages", None):
         overrides["languages"] = args.languages
+    if getattr(args, "pbp", None):
+        overrides["pbp_languages"] = args.pbp
     if getattr(args, "rps", None):
         overrides["requests_per_second"] = args.rps
     if getattr(args, "concurrency", None):

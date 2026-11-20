@@ -63,6 +63,14 @@ def content(game_pk: int, language: str = "en", *, highlight_limit: int | None =
     )
 
 
+def play_by_play(game_pk: int, language: str = "en", *, fields: str | None = None) -> str:
+    """타석별 기록 문장 (feed/live 의 부분 집합). language=es 면 result.event·description 이 스페인어로 온다."""
+    return _url(
+        f"v1/game/{game_pk}/playByPlay",
+        {"language": None if language == "en" else language, "fields": fields},
+    )
+
+
 def win_probability(game_pk: int) -> str:
     """플레이별 승리확률·WPA·레버리지 (allPlays 전체를 다시 포함한다)."""
     return _url(f"v1/game/{game_pk}/winProbability")

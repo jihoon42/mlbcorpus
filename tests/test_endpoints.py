@@ -28,3 +28,9 @@ def test_content_spanish():
 def test_win_probability_and_meta():
     assert endpoints.win_probability(1) == "https://statsapi.mlb.com/api/v1/game/1/winProbability"
     assert endpoints.meta("eventTypes") == "https://statsapi.mlb.com/api/v1/eventTypes"
+
+
+def test_play_by_play_url_has_language_and_fields():
+    url = endpoints.play_by_play(824464, "es", fields="allPlays,result")
+    assert url == "https://statsapi.mlb.com/api/v1/game/824464/playByPlay?language=es&fields=allPlays%2Cresult"
+    assert endpoints.play_by_play(824464) == "https://statsapi.mlb.com/api/v1/game/824464/playByPlay"

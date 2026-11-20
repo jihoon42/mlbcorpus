@@ -13,7 +13,7 @@ from dataclasses import dataclass, field
 from typing import Any, Sequence
 
 from . import endpoints
-from .config import RESOURCE_FEED, RESOURCE_WINPROB, Settings
+from .config import PBP_FIELDS, RESOURCE_FEED, RESOURCE_WINPROB, Settings
 from .fetch import FetchError, Fetcher, NotFound
 from .manifest import Manifest, PendingGame
 from .schedule import GameRow, parse_schedule, summarize
@@ -45,6 +45,8 @@ def resource_url(resource: str, game_pk: int) -> str:
         return endpoints.win_probability(game_pk)
     if resource.startswith("content."):
         return endpoints.content(game_pk, resource.split(".", 1)[1])
+    if resource.startswith("pbp."):
+        return endpoints.play_by_play(game_pk, resource.split(".", 1)[1], fields=PBP_FIELDS)
     raise ValueError(f"unknown resource {resource!r}")
 
 
@@ -63,6 +65,10 @@ def validate_resource(resource: str, game_pk: int, data: Any) -> str | None:
     if resource.startswith("content."):
         if not isinstance(data, dict) or "editorial" not in data:
             return "content: missing editorial"
+        return None
+    if resource.startswith("pbp."):
+        if not isinstance(data, dict) or not isinstance(data.get("allPlays"), list):
+            return "pbp: missing allPlays"
         return None
     return f"unknown resource {resource!r}"
 
